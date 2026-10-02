@@ -1,0 +1,15 @@
+# Run config hard.grok-fc.bothorders; writes to data/runs/hard_grok_bo.
+data_dir: data/runs/hard_grok_bo
+item_bank: data/items_hard.yaml
+samples: 3
+temperature: 0.0
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai}
+  - {name: claude-opus-4-8, provider: anthropic}
+  - {name: claude-sonnet-4-6, provider: anthropic}
+
+judges:
+  - {judge_model: grok-4.3, provider: xai}

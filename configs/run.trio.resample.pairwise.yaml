@@ -1,0 +1,20 @@
+# Run config trio.resample.pairwise; writes to data/runs/signal.
+data_dir: data/runs/signal
+item_bank: data/items.yaml
+samples: 9
+temperature: 0.0
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai}
+  - {name: claude-opus-4-8, provider: anthropic}
+  - {name: claude-sonnet-4-6, provider: anthropic}
+  - {name: gemini-3.5-flash, provider: google}   # calibration anchor (must stay below the trio)
+
+judges:
+  - {judge_model: claude-opus-4-8-api, model: claude-opus-4-8, provider: anthropic}
+  - {judge_model: claude-sonnet-4-6, provider: anthropic}
+  - {judge_model: gpt-5.5, provider: openai}
+  - {judge_model: gemini-3.1-pro-preview, provider: google}   # the neutral that carries the cross-lab test
+  - {judge_model: gemma4:26b, provider: ollama}               # FREE local, independent-lineage neutral (noisy)

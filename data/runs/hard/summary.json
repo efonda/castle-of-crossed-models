@@ -1,0 +1,210 @@
+{
+  "stage": "analyze",
+  "n_scores": 492,
+  "n_generations": 216,
+  "descriptive_means": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "distinctness": 4.784810126582278,
+      "bridge": 4.7974683544303796,
+      "tonal": 4.265822784810126,
+      "originality": 4.1645569620253164,
+      "combinatorial": 4.430379746835443,
+      "n_scores": 79
+    },
+    {
+      "model": "claude-opus-4-8",
+      "distinctness": 4.951219512195122,
+      "bridge": 4.914634146341464,
+      "tonal": 4.987804878048781,
+      "originality": 4.695121951219512,
+      "combinatorial": 4.951219512195122,
+      "n_scores": 82
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "distinctness": 4.9113924050632916,
+      "bridge": 4.7974683544303796,
+      "tonal": 5.0,
+      "originality": 4.784810126582278,
+      "combinatorial": 4.848101265822785,
+      "n_scores": 79
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "distinctness": 4.8604651162790695,
+      "bridge": 4.872093023255814,
+      "tonal": 4.034883720930233,
+      "originality": 4.104651162790698,
+      "combinatorial": 4.3604651162790695,
+      "n_scores": 86
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "distinctness": 4.9753086419753085,
+      "bridge": 5.0,
+      "tonal": 4.888888888888889,
+      "originality": 4.530864197530864,
+      "combinatorial": 4.827160493827161,
+      "n_scores": 81
+    },
+    {
+      "model": "gpt-5.5",
+      "distinctness": 5.0,
+      "bridge": 5.0,
+      "tonal": 5.0,
+      "originality": 4.764705882352941,
+      "combinatorial": 4.988235294117647,
+      "n_scores": 85
+    }
+  ],
+  "judge_agreement_icc": [
+    {
+      "dimension": "distinctness",
+      "icc_2_1": 0.08131487889273369,
+      "n_units": 60,
+      "n_judges": 3
+    },
+    {
+      "dimension": "bridge",
+      "icc_2_1": 0.24797219003476306,
+      "n_units": 60,
+      "n_judges": 3
+    },
+    {
+      "dimension": "tonal",
+      "icc_2_1": 0.7012260127931773,
+      "n_units": 60,
+      "n_judges": 3
+    },
+    {
+      "dimension": "originality",
+      "icc_2_1": 0.40937829293993694,
+      "n_units": 60,
+      "n_judges": 3
+    },
+    {
+      "dimension": "combinatorial",
+      "icc_2_1": 0.5185856754306432,
+      "n_units": 60,
+      "n_judges": 3
+    }
+  ],
+  "ranking": [
+    "gpt-5.5",
+    "claude-opus-4-8",
+    "claude-sonnet-4-6",
+    "gemini-3.5-flash",
+    "claude-haiku-4-5-20251001",
+    "gemini-3.1-flash-lite"
+  ],
+  "rank_mean_spearman": 0.9310857142857144,
+  "frontier_table": [
+    {
+      "model": "gpt-5.5",
+      "mean": 4.9411764705882355,
+      "ci_low": 4.916666666666667,
+      "ci_high": 4.964285714285714
+    },
+    {
+      "model": "claude-opus-4-8",
+      "mean": 4.887195121951219,
+      "ci_low": 4.840618411144579,
+      "ci_high": 4.927223215923684
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "mean": 4.8734177215189876,
+      "ci_low": 4.814701138519924,
+      "ci_high": 4.926144719251337
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "mean": 4.848765432098766,
+      "ci_low": 4.795447699890471,
+      "ci_high": 4.896843286494926
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "mean": 4.503164556962025,
+      "ci_low": 4.378093516791044,
+      "ci_high": 4.614819538926682
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "mean": 4.468023255813954,
+      "ci_low": 4.354160814606742,
+      "ci_high": 4.571438069908814
+    }
+  ],
+  "frontier_top_saturated": true,
+  "combinatorial_orthogonality": {
+    "r": 0.6386606925876952,
+    "p": 3.761300243110014e-26,
+    "n": 216
+  },
+  "thinking_effect": [
+    {
+      "dimension": "distinctness",
+      "mean_diff": NaN,
+      "n_pairs": 0,
+      "p_value": NaN
+    },
+    {
+      "dimension": "bridge",
+      "mean_diff": NaN,
+      "n_pairs": 0,
+      "p_value": NaN
+    },
+    {
+      "dimension": "tonal",
+      "mean_diff": NaN,
+      "n_pairs": 0,
+      "p_value": NaN
+    },
+    {
+      "dimension": "originality",
+      "mean_diff": NaN,
+      "n_pairs": 0,
+      "p_value": NaN
+    },
+    {
+      "dimension": "combinatorial",
+      "mean_diff": NaN,
+      "n_pairs": 0,
+      "p_value": NaN
+    }
+  ],
+  "failure_worst": [
+    {
+      "generation_id": "d839cc561f99173f081a94be78d8b961a75e025f6c3b525798ddf0f90a6b944c",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "hard-anchor-01",
+      "primary_mean": 3.375
+    },
+    {
+      "generation_id": "627b3a423698b3700657fe98c3bec6da78d0c23253e9f792dad15603ac66748c",
+      "model": "gemini-3.1-flash-lite",
+      "item_id": "hard-hourglass-01",
+      "primary_mean": 3.625
+    },
+    {
+      "generation_id": "661630a82a7b343087f49c4a1859c92bdf0e6359bf818c9fb903174cc48c3807",
+      "model": "gemini-3.1-flash-lite",
+      "item_id": "hard-coin-01",
+      "primary_mean": 3.75
+    },
+    {
+      "generation_id": "2a59ba5ff3561ea80fbcb8e9fad2e76172a1046d88dc54725f517398f010ee47",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "hard-map-01",
+      "primary_mean": 3.75
+    },
+    {
+      "generation_id": "bdc2ffe7cd07a4de6ed3dce4baac4f4b3901bcc30b8a6dd6ba539074d9001bd8",
+      "model": "claude-haiku-4-5-20251001",
+      "item_id": "hard-coin-01",
+      "primary_mean": 3.75
+    }
+  ]
+}

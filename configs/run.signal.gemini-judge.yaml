@@ -1,0 +1,14 @@
+# Run config signal.gemini-judge; writes to data/runs/signal_gemini.
+data_dir: data/runs/signal_gemini
+item_bank: data/items.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models: []
+
+judges:
+  - judge_model: gemini-3.1-pro-preview
+    provider: google

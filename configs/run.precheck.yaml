@@ -1,0 +1,14 @@
+# Run config precheck; writes to data/runs/signal_grok.
+data_dir: data/runs/signal_grok
+item_bank: data/items.yaml
+samples: 3
+temperature: 0.0
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai}          # strong
+  - {name: gpt-oss:20b, provider: ollama}      # clearly weaker, but fluent + structurally valid
+
+judges:
+  - {judge_model: grok-4.3, provider: xai}     # worked example; swap to the candidate vendor

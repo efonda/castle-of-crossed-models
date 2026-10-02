@@ -1,0 +1,115 @@
+# Calvino Benchmark — item bank (Phase 1)
+# version is pinned per generation so analysis knows which bank produced an output.
+version: "0.1.0"
+
+items:
+  - item_id: lantern-01
+    object: The Lantern
+    object_type: tarot_image_object
+    description: >-
+      a battered tin lantern with a single soot-clouded glass pane and a looped
+      wire handle, its wick crusted with old salt
+    story_a: >-
+      A smuggler crouches on the headland through the small hours, waiting for the
+      patrol boat's searchlight to sweep past before he answers the ship riding at
+      anchor offshore.
+    story_b: >-
+      At first light a fisherman's widow lifts the trapdoor and goes down into her
+      flooded cellar to find what the storm tide carried in and what it carried off.
+    prompt_variants:
+      - base
+
+  - item_id: tower-01
+    object: The Tower
+    object_type: tarot_image_object
+    description: >-
+      a high tower split by a bolt of lightning, its stone crown thrown into the
+      air, two figures falling from the heights as flames bloom from the windows
+    story_a: >-
+      A master builder spent forty years raising an impregnable fortress for a
+      tyrant, certain it would outlast every kingdom.
+    story_b: >-
+      A prisoner has been held for years in a cell deep inside that same fortress,
+      having long forgotten the look of daylight.
+    prompt_variants:
+      - base
+
+  # --- The Wheel: true shared-node structure (like the Tower's lightning) — one
+  # turn ends Story A and begins Story B. Probes whether high Combinatorial
+  # Fidelity / low redundancy replicates beyond the Tower.
+  - item_id: wheel-01
+    object: The Wheel
+    object_type: tarot_image_object
+    description: >-
+      a great spoked wheel half-sunk in a millrace, paddles sheeting water, one
+      side rising as the other plunges into the dark of the wheel pit
+    story_a: >-
+      An old miller has kept the wheel turning for fifty winters, and tonight he
+      sets it to grind the village's last sack of grain before the new dam stops
+      the river for good.
+    story_b: >-
+      A boy who climbed down into the wheel pit to pry a wedged coin from the
+      paddles feels the great timbers shudder and begin to move above him.
+    prompt_variants:
+      - base
+
+  # --- The Scales: strong canonical meaning ("justice") that must NOT be the
+  # bridge — the grounded link is literal weighing. Probes cliché-escape /
+  # Interpretive Originality.
+  - item_id: scales-01
+    object: The Scales
+    object_type: tarot_image_object
+    family: cliche-trap   # easy-set bridge for the Route B cliché-trap-vs-invented contrast (§11.3)
+    description: >-
+      a two-pan balance of tarnished brass on a worn beam, a set of small stamped
+      weights beside it, one pan hanging lower than the other
+    story_a: >-
+      A grain merchant has shaved a sliver from each of his weights through the
+      famine to keep his own children fed, and this morning the market inspector
+      is working down the row of stalls toward him.
+    story_b: >-
+      In the apothecary two doors down, a girl measures a dying man's dose on the
+      weights she bought cheap at the merchant's stall, where a grain too much is
+      the difference between sleep and death.
+    prompt_variants:
+      - base
+
+  # --- The Salt Compass: invented object, no canonical meaning — pure construal
+  # ceiling for Originality. Grounded physical hook: the salt needle dissolves in
+  # the very water it seeks.
+  - item_id: salt-compass-01
+    object: The Salt Compass
+    object_type: invented_symbolic_object
+    family: invented   # easy-set bridge: the invented object that gave the widest originality spread (§4.4)
+    description: >-
+      a palm-sized compass whose needle is a slender sliver of grey salt floating
+      in oil, swinging not to north but toward the nearest hidden water
+    story_a: >-
+      A caravan guide has crossed the salt flats for thirty years trusting the
+      needle to find the wells buried under the crust, and at dawn, far from any
+      water he knows, the needle swings hard and sure for the first time in days.
+    story_b: >-
+      In a coastal town left half-drowned by the spring tide, a salvager lifts the
+      same compass from the silt of a flooded room and watches the needle thin and
+      blur in the standing water.
+    prompt_variants:
+      - base
+
+  # --- The Key: ordinary object, deliberately relay-prone (carried A->B) — a
+  # low-Combinatorial foil to the true-node Wheel/Tower. Exercises the object-type
+  # factor. Grounded detail: the one snapped ward.
+  - item_id: key-01
+    object: The Key
+    object_type: ordinary_physical_object
+    description: >-
+      a long iron key, its bow worn smooth by generations of hands, one ward of
+      its bit snapped clean off
+    story_a: >-
+      The last steward locks the great door of the manor and pockets the key as
+      the bailiffs carry out the final crates, the house that raised three
+      generations of his family now closed for good.
+    story_b: >-
+      Years later a locksmith's apprentice is handed the same worn key to copy,
+      and frowns at the snapped ward, knowing nothing of the door it once turned.
+    prompt_variants:
+      - base

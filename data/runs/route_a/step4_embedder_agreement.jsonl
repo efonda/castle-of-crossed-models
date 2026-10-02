@@ -1,0 +1,3 @@
+{"embedder_a": "gemini:gemini-embedding-2", "embedder_b": "openai:text-embedding-3-small", "reference": "narrative", "spearman": 0.6131765648970237}
+{"embedder_a": "gemini:gemini-embedding-2", "embedder_b": "openai:text-embedding-3-small", "reference": "statement", "spearman": 0.7557867283127352}
+{"embedder_a": "openai:text-embedding-3-small", "embedder_b": "gemini:gemini-embedding-2", "reference": "statement", "extractor": "anthropic:claude-sonnet-4-6", "spearman": 0.6175769289665991}

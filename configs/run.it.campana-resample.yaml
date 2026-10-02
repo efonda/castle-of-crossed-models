@@ -1,0 +1,16 @@
+# Run config it.campana-resample; writes to data/runs/italian.
+data_dir: data/runs/italian
+item_bank: data/items_it_campana.yaml
+
+samples: 9
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: claude-sonnet-4-6, provider: anthropic, conditions: [normal]}   # the mid that trips (n=9 done)
+  - {name: claude-opus-4-8, provider: anthropic, conditions: [normal]}      # flagship baseline (n=9 done, 0/9)
+  - {name: gemini-3.5-flash, provider: google, conditions: [normal]}
+  - {name: gpt-5.4-mini, provider: openai, conditions: [normal]}
+
+judges: []

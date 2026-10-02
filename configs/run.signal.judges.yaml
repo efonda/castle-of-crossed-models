@@ -1,0 +1,31 @@
+# Run config signal.judges; writes to data/runs/signal.
+data_dir: data/runs/signal
+item_bank: data/items.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models: []
+
+judges:
+  - judge_model: claude-opus-4-8-api   # distinct label; calls the real model below
+    model: claude-opus-4-8
+    provider: anthropic
+  - judge_model: claude-sonnet-4-6
+    provider: anthropic
+  - judge_model: gpt-5.5
+    provider: openai
+  - judge_model: gemini-3.1-pro-preview   # THIRD judge family (Google) — extends §9 lineage geometry
+    provider: google
+  - judge_model: claude-opus-4-8-thinking   # SAME model as -api, extended thinking ON (adaptive,
+    model: claude-opus-4-8                   # HIGH effort). Distinct label keeps reasoning-on vs
+    provider: anthropic                      # -off Opus separable (plan #3).
+    thinking: true
+    effort: high                             # Opus 4.8 reasoning knob (high/medium/low)
+  - judge_model: gpt-5.5-thinking            # SAME model as the gpt-5.5 judge, reasoning ON
+    model: gpt-5.5                           # (reasoning_effort=high). Tests whether reasoning
+    provider: openai                         # changes gpt-5.5's self-preference (§9, vs opus).
+    thinking: true
+    effort: high

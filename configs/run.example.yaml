@@ -1,0 +1,31 @@
+# Example run config — uses the 'mock' provider so it runs end-to-end with no API
+# key. Copy this and swap providers to 'anthropic' (and real model ids) for a live
+# slice. All stages are resumable; re-running skips work already in data_dir.
+
+data_dir: data/runs/example
+item_bank: data/items.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 500
+
+models:
+  - name: mock-model-a
+    provider: mock
+    conditions: [normal]
+  - name: mock-model-b
+    provider: mock
+    conditions: [normal]
+  # A thinking-paired model declares both conditions (brief: reasoning-depth test).
+  - name: mock-model-c
+    provider: mock
+    conditions: [normal, thinking]
+
+judges:
+  - judge_model: mock-judge-x
+    provider: mock
+  - judge_model: mock-judge-y
+    provider: mock
+  - judge_model: mock-judge-z
+    provider: mock

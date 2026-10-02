@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Run data under data/runs/ is tracked: it is the released dataset.
+# The embeddings cache is regenerable and not shipped.
+data/runs/route_a/embeddings_cache.jsonl
+data/runs/example/
+
+# Script outputs
+outputs/
+figures/

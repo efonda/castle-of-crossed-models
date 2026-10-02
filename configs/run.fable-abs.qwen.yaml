@@ -1,0 +1,16 @@
+# Run config fable-abs.qwen; writes to data/runs/fable-fc.
+data_dir: data/runs/fable-fc
+item_bank: data/items.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models: []   # judge-only: score existing gens, generate nothing
+
+judges:
+  - judge_model: qwen3.7-max
+    provider: openrouter
+    model: qwen/qwen3.7-max
+    scale: 5

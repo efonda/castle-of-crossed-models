@@ -1,0 +1,15 @@
+# Run config it.campana-resample.judges; writes to data/runs/italian.
+data_dir: data/runs/italian
+item_bank: data/items_it_campana.yaml
+
+samples: 9
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models: []
+
+judges:
+  - {judge_model: claude-opus-4-8-api, model: claude-opus-4-8, provider: anthropic, language: it}
+  - {judge_model: gpt-5.5, provider: openai, language: it}
+  - {judge_model: gemini-3.1-pro-preview, provider: google, language: it}

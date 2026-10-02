@@ -1,0 +1,17 @@
+# Run config hard.fable; writes to data/runs/hard_fable_fc.
+data_dir: data/runs/hard_fable_fc
+item_bank: data/items_hard.yaml
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - name: claude-fable-5
+    provider: anthropic
+    conditions: [normal]
+
+judges:
+  - {judge_model: gemini-3.1-pro-preview, provider: google}
+  - {judge_model: qwen3.7-max, provider: openrouter, model: qwen/qwen3.7-max, scale: 5}
+  - {judge_model: grok-4.3, provider: xai}

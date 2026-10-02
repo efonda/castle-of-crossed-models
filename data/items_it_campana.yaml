@@ -1,0 +1,13 @@
+# Single-item bank for the campana-01 resample experiment (tests the n=3-noise
+# hypothesis on Sonnet). campana-01 copied verbatim from items_it.yaml (it-0.2.0-draft)
+# so the generations are identical-item, just more samples.
+version: it-campana-resample-0.1.0
+items:
+  - item_id: campana-01
+    object: La Campana
+    object_type: ordinary_physical_object
+    description: una campana di bronzo di un campanile di paese
+    story_a: "Dal campanile la campana suona a martello: il fiume ha rotto gli argini."
+    story_b: Il campanaro sordo abbraccia il bronzo per sentirne nelle ossa l'unica musica che conosca.
+    family: cliche-trap
+    language: it

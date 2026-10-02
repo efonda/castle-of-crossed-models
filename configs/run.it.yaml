@@ -1,0 +1,21 @@
+# Run config it; writes to data/runs/italian.
+data_dir: data/runs/italian
+item_bank: data/items_it.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai, conditions: [normal]}
+  - {name: claude-opus-4-8, provider: anthropic, conditions: [normal]}
+  - {name: claude-sonnet-4-6, provider: anthropic, conditions: [normal]}
+  - {name: gpt-5.4-mini, provider: openai, conditions: [normal]}
+  - {name: gemini-3.5-flash, provider: google, conditions: [normal]}
+  - {name: claude-haiku-4-5-20251001, provider: anthropic, conditions: [normal]}   # lite
+  - {name: llama3.2:3b, provider: ollama, conditions: [normal]}                     # weak local floor
+  - {name: gemma4:26b, provider: ollama, conditions: [normal]}     
+  - {name: gemma4:e4b, provider: ollama, conditions: [normal]}     
+
+judges: []

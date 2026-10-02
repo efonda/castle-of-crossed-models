@@ -1,0 +1,13 @@
+# Run config signal.qwen-judge; writes to data/runs/signal_qwen.
+data_dir: data/runs/signal_qwen
+item_bank: data/items.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models: []
+
+judges:
+  - {judge_model: qwen3.7-max, provider: openrouter, model: qwen/qwen3.7-max}

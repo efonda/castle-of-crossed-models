@@ -1,0 +1,20 @@
+# Run config execution.fc.nonneutral; writes to data/runs/fable-fc.
+data_dir: data/runs/fable-fc
+item_bank: data/items.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models: []   # judge-only
+
+judges:
+  - judge_model: claude-opus-4-8-exec
+    model: claude-opus-4-8
+    provider: anthropic
+    execution: true
+  - judge_model: gpt-5.5-exec
+    model: gpt-5.5
+    provider: openai
+    execution: true

@@ -1,0 +1,26 @@
+[project]
+name = "calvino"
+version = "0.1.0"
+description = "The Castle of Crossed Models: a Calvino-inspired creative-writing benchmark that audits its own LLM-judge panel"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=0.104.1",
+    "google-genai>=2.6.0",
+    "numpy>=2.4.6",
+    "openai>=2.38.0",
+    "pandas>=3.0.3",
+    "pydantic>=2.13.4",
+    "pyyaml>=6.0.3",
+    "scipy>=1.17.1",
+    "statsmodels>=0.14.6",
+]
+
+[tool.uv]
+exclude-newer = "7 days"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]

@@ -1,0 +1,17 @@
+# Run config fable-fc; writes to data/runs/fable-fc.
+data_dir: data/runs/fable-fc
+item_bank: data/items.yaml
+samples: 3
+temperature: 0.0
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: claude-fable-5, provider: anthropic}
+  - {name: gpt-5.5, provider: openai}
+  - {name: claude-opus-4-8, provider: anthropic}
+  - {name: claude-sonnet-4-6, provider: anthropic}
+
+judges:
+  - {judge_model: gemini-3.1-pro-preview, provider: google}
+  - {judge_model: grok-4.3, provider: xai}

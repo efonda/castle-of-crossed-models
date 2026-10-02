@@ -1,0 +1,53 @@
+{
+  "reviewers": {
+    "gemini": {
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "lineage": "Google",
+      "role": "out-of-lineage LLM reviewer, read-only"
+    },
+    "grok": {
+      "provider": "xai",
+      "model": "grok-4.3",
+      "lineage": "xAI",
+      "role": "out-of-lineage LLM reviewer, read-only"
+    }
+  },
+  "rubric": {
+    "path": "reports/item-validation-rubric.md",
+    "sha256": "20947addeae031121cb43ef0ac17ebfe598c81c76c91e37890e5a3d83e9ffd14"
+  },
+  "banks": [
+    "signal",
+    "hard",
+    "italian"
+  ],
+  "items_reviewed": 24,
+  "aggregate_counts": {
+    "validated": 16,
+    "flagged": 8
+  },
+  "flagged_items": [
+    "campana-01",
+    "hard-hourglass-01",
+    "hard-map-01",
+    "hard-mirror-01",
+    "hard-thread-01",
+    "scales-01",
+    "tower-01",
+    "wheel-01"
+  ],
+  "weak_items": [],
+  "splits": [
+    "campana-01",
+    "hard-hourglass-01",
+    "hard-map-01",
+    "hard-mirror-01",
+    "hard-thread-01",
+    "tower-01"
+  ],
+  "parse_failures_this_run": 0,
+  "aggregation_rule": "PRE-COMMITTED aggregation rule. Conservative: any reviewer's flag flags the item.",
+  "read_only": "no item was added, edited, or dropped by this pass",
+  "generated": "2026-07-29T07:02:18.939749+00:00"
+}

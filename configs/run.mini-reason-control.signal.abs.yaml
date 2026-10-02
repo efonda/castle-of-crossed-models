@@ -1,0 +1,23 @@
+# Run config mini-reason-control.signal.abs; writes to data/runs/mini-reason-control-signal.
+data_dir: data/runs/mini-reason-control-signal
+item_bank: data/items.yaml
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models: []   # judge-only; gens already on disk
+
+judges:
+  - judge_model: gemini-3.1-pro-preview-exec
+    model: gemini-3.1-pro-preview
+    provider: google
+    execution: true
+  - judge_model: qwen3.7-max-exec
+    model: qwen/qwen3.7-max
+    provider: openrouter
+    execution: true
+  - judge_model: grok-4.3-exec
+    model: grok-4.3
+    provider: xai
+    execution: true

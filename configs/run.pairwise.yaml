@@ -1,0 +1,25 @@
+# Run config pairwise; writes to data/runs/signal.
+data_dir: data/runs/signal
+item_bank: data/items.yaml
+samples: 3
+temperature: 0.0
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai}
+  - {name: claude-opus-4-8, provider: anthropic}
+  - {name: claude-sonnet-4-6, provider: anthropic}
+  - {name: gemini-3.1-pro-preview, provider: google}   # third-vendor flagship
+  - {name: gemini-3.5-flash, provider: google}
+  - {name: gpt-5.4-mini, provider: openai}             # OpenAI non-flagship (sibling self-pref)
+  - {name: claude-haiku-4-5-20251001, provider: anthropic}
+  - {name: gemini-3.1-flash-lite, provider: google}
+
+judges:  # 4 judges, 3 vendors — Gemini-Pro is the third family (plan #1)
+  - {judge_model: claude-opus-4-8-api, model: claude-opus-4-8, provider: anthropic}
+  - {judge_model: claude-sonnet-4-6, provider: anthropic}
+  - {judge_model: gpt-5.5, provider: openai}
+  - {judge_model: gemini-3.1-pro-preview, provider: google}
+  - {judge_model: claude-opus-4-8-thinking, model: claude-opus-4-8, provider: anthropic, thinking: true, effort: high}
+  - {judge_model: gpt-5.5-thinking, model: gpt-5.5, provider: openai, thinking: true, effort: high}

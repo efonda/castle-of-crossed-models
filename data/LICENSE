@@ -1,0 +1,12 @@
+The contents of this data/ directory (item banks, item-audit log, and the run data under
+data/runs/: generations, validations, judge scores, raw judge responses and pairwise votes)
+are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Copyright (c) 2026 Enrico Fonda, to the extent any rights are held.
+
+Model outputs were generated through the APIs of the providers named in each record
+(Anthropic, OpenAI, Google, xAI, and Alibaba via OpenRouter) and through local open-weight
+models. Their use also remains subject to those providers' terms.
+
+Please cite the paper (see README.md) when using this data.

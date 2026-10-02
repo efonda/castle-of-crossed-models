@@ -1,0 +1,15 @@
+# Run config trio.resample; writes to data/runs/signal.
+data_dir: data/runs/signal          # SAME dir — new samples join the existing signal data
+item_bank: data/items.yaml
+samples: 9                          # was 3; generates 3..8 new (0..2 cache-skip)
+temperature: 0.7                    # MUST match the original signal run (stochastic samples)
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai, conditions: [normal]}
+  - {name: claude-opus-4-8, provider: anthropic, conditions: [normal]}
+  - {name: claude-sonnet-4-6, provider: anthropic, conditions: [normal]}
+  - {name: gemini-3.5-flash, provider: google, conditions: [normal]}   # calibration anchor
+
+judges: []                          # generation only

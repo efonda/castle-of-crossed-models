@@ -1,0 +1,96 @@
+# =============================================================================
+# ITALIAN ITEM BANK — model-authored.
+# =============================================================================
+# These 6 items were drafted to clear the four traps below. They have not been checked by a
+# native reader for Italian-canonical readings, idiom, or whether each crossing works.
+#
+# THE FOUR TRAPS — every item must clear all four:
+#   1. DISTINCTNESS: the object's two story-meanings must GENUINELY DIVERGE (not two
+#      variants of the same use, e.g. weighing pepper vs dividing flour).
+#   2. CLICHÉ-TRAP must BAIT the cliché: the object's canonical reading (bilancia→giustizia,
+#      specchio→vanità/verità, campana→morte/fede) is invoked by the OBJECT but neither story
+#      hands it over, so a model that reaches for it is clichéing. Invented items have no
+#      canonical reading to bait (that's the contrast).
+#   3. INVENTED must be NATIVELY invented (Italian associations), not an English object calqued.
+#   4. BRIDGE = ONE physical object, two meanings — the contexts must let the SAME object be in
+#      both stories (it travels A→B), never the same material/motif appearing twice.
+#
+# `language: it` drives the Italian generation prompt. Bump `version` on any change.
+# =============================================================================
+version: it-0.2.0-draft
+items:
+  # === CLICHÉ-TRAP ITEMS (strong Italian canonical reading, baited but dodged) ===
+
+  # bilancia → giustizia. A: apothecary's life/death dose; B: usurer's gold. Two divergent
+  # meanings (mercy/mortality vs greed/value); justice baited, neither story about it; one
+  # balance travels apothecary→usurer.
+  - item_id: bilancia-01
+    object: La Bilancia
+    object_type: ordinary_physical_object
+    description: una bilancia a due piatti di ottone
+    story_a: Lo speziale posa sul piatto la dose di digitale che può guarire il vecchio o ucciderlo.
+    story_b: Nel retrobottega di un usuraio, l'oro strappato ai pegni dei disperati aspetta d'essere pesato.
+    family: cliche-trap
+    language: it
+
+  # specchio → vanità/verità. A: watching one's back (vigilance/threat); B: signalling for
+  # rescue (hope/salvation). Divergent; vanity/truth baited but dodged; one pocket mirror
+  # carried city→mountain.
+  - item_id: specchietto-01
+    object: Lo Specchietto
+    object_type: ordinary_physical_object
+    description: uno specchietto tascabile d'ottone
+    story_a: Al tavolo d'angolo l'uomo tiene d'occhio nello specchietto chi entra dalla porta alle sue spalle.
+    story_b: Su un valico innevato una donna cerca un riflesso che richiami i soccorsi prima del buio.
+    family: cliche-trap
+    language: it
+
+  # campana → morte/fede. A: flood tocsin (public alarm/danger); B: a deaf ringer feeling the
+  # bronze (private, felt music/beauty). Divergent; death-knell/faith baited but dodged; the
+  # one village bell.
+  - item_id: campana-01
+    object: La Campana
+    object_type: ordinary_physical_object
+    description: una campana di bronzo di un campanile di paese
+    story_a: "Dal campanile la campana suona a martello: il fiume ha rotto gli argini."
+    story_b: Il campanaro sordo abbraccia il bronzo per sentirne nelle ossa l'unica musica che conosca.
+    family: cliche-trap
+    language: it
+
+  # === INVENTED ITEMS (no settled symbolism — natively invented, single-object bridge) ===
+
+  # bread doll: native (pane is deeply Italian), no canonical reading. A: bread hidden as a doll
+  # to evade thieves in famine (concealed sustenance/cunning); B: a bread-doll burned to ward off
+  # children's fever (sacrificial effigy/superstition). Divergent; one doll travels house→bonfire.
+  - item_id: bambola-pane-01
+    object: La Bambola di Pane
+    object_type: invented_symbolic_object
+    description: una bambola fatta di pane, grande come un neonato
+    story_a: Durante la carestia la madre cuoce una bambola di pane perché i ladri non trovino la farina nascosta.
+    story_b: In paese si brucia una bambola di pane sul falò per allontanare la febbre dai bambini.
+    family: invented
+    language: it
+
+  # cage with a stone: surreal invented object, no settled meaning. A: a lighthouse keeper cages
+  # a stone he says spoke to him (madness/companionship); B: a con-man shows it as proof a
+  # bird-of-paradise exists (deception/wonder). Divergent; one cage travels keeper→fair.
+  - item_id: gabbia-sasso-01
+    object: La Gabbia col Sasso
+    object_type: invented_symbolic_object
+    description: una gabbia da uccelli con dentro un sasso di fiume
+    story_a: Il guardiano del faro tiene in gabbia il sasso che, dice, gli ha parlato durante la tempesta.
+    story_b: Alla fiera un imbroglione mostra la gabbia col sasso come prova che l'uccello del paradiso esiste.
+    family: invented
+    language: it
+
+  # umbrella sewn shut: invented, no canonical reading. A: a widow never unpicks the umbrella her
+  # husband left with and never returned (grief/relic); B: a smuggler passes customs with the
+  # sewn umbrella swollen with contraband (concealment). Divergent; one umbrella travels widow→smuggler.
+  - item_id: ombrello-cucito-01
+    object: L'Ombrello Cucito
+    object_type: invented_symbolic_object
+    description: un ombrello nero cucito chiuso con lo spago
+    story_a: La vedova non ha mai disfatto le cuciture dell'ombrello con cui il marito uscì e non tornò.
+    story_b: Alla dogana un contrabbandiere passa indisturbato con l'ombrello che non si apre, gonfio di qualcosa.
+    family: invented
+    language: it

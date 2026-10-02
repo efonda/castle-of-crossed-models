@@ -1,0 +1,31 @@
+# Run config hard.judges; writes to data/runs/hard.
+data_dir: data/runs/hard
+item_bank: data/items_hard.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models: []
+
+judges:  # 4 judges across 3 vendors — Gemini-Pro is the THIRD family (plan #1)
+  - judge_model: claude-opus-4-8-api   # distinct label; calls the real claude-opus-4-8
+    model: claude-opus-4-8
+    provider: anthropic
+  - judge_model: claude-sonnet-4-6
+    provider: anthropic
+  - judge_model: gpt-5.5
+    provider: openai
+  - judge_model: gemini-3.1-pro-preview
+    provider: google
+  - judge_model: claude-opus-4-8-thinking   # SAME model as -api, but extended thinking ON
+    model: claude-opus-4-8                   # (adaptive thinking, HIGH effort). Distinct label
+    provider: anthropic                      # so reasoning-on vs -off Opus stay separable.
+    thinking: true
+    effort: high                             # Opus 4.8 reasoning knob (high/medium/low)
+  - judge_model: gpt-5.5-thinking            # SAME model as the gpt-5.5 judge, reasoning ON
+    model: gpt-5.5                           # (reasoning_effort=high). Tests whether reasoning
+    provider: openai                         # changes gpt-5.5's self-preference (§9, vs opus).
+    thinking: true
+    effort: high

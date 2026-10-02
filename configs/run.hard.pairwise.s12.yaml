@@ -1,0 +1,20 @@
+# Run config hard.pairwise.s12; writes to data/runs/hard.
+data_dir: data/runs/hard
+item_bank: data/items_hard.yaml
+samples: 3
+temperature: 0.0
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai}
+  - {name: claude-opus-4-8, provider: anthropic}
+  - {name: claude-sonnet-4-6, provider: anthropic}
+  - {name: gemini-3.5-flash, provider: google}
+  - {name: gemini-3.1-flash-lite, provider: google}
+
+judges:  # the 4 cross-lab consensus judges (same panel as the matched baseline)
+  - {judge_model: claude-opus-4-8-api, model: claude-opus-4-8, provider: anthropic}
+  - {judge_model: claude-sonnet-4-6, provider: anthropic}
+  - {judge_model: gpt-5.5, provider: openai}
+  - {judge_model: gemini-3.1-pro-preview, provider: google}

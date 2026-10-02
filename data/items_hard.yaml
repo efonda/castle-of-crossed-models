@@ -1,0 +1,237 @@
+# Calvino Benchmark — HARD item bank (Route B: per-crossing difficulty, technical report §11.3)
+#
+# These items deliberately turn the one knob the saturation finding never tested: item
+# DIFFICULTY (not structure — the grid showed "bigger" only compresses). Two families, kept
+# as a DESIGNED CONTRAST (do not collapse one into the other — the comparison is the point):
+#   • cliche-trap — an object with an overwhelming canonical reading (mirror=vanity,
+#     anchor=steadfastness, red-thread=fate) that BOTH stories must subvert; the obvious
+#     construal is a trap for both halves. Tests "avoid the known cliché."
+#   • invented — objects with no settled meaning at all (the salt-compass result, the widest
+#     originality spread in the easy set, is the existing hint this is the live knob), forcing
+#     the model to CONSTRUCT meaning from nothing. Tests "make meaning from scratch."
+# The designed payoff: a flagship TIE on cliche-traps + a flagship SPREAD on invented items
+# would localise where frontier difference lives (construction) vs where it is saturated
+# (cliché-avoidance) — more informative than either family alone.
+#
+# In every item the SAME physical object means something different in each story, joined by a
+# grounded (physical/causal/temporal) bridge — never a homonym or pure symbol.
+#
+# 12 items: 5 cliche-trap, 7 invented (additions leaned invented, the empirically-backed bet
+# for producing spread). Each item is `family`-tagged so forced-choice agreement can be
+# reported PER FAMILY (run.hard.pairwise.yaml), not pooled. Generate flagships + a lite
+# calibration ladder, then forced-choice; the test is whether flagship-vs-flagship inter-judge
+# agreement climbs above the easy-item 0.62 — separately within each family. Still LLM-judged;
+# the human anchor remains decisive.
+
+version: "hard-0.2.0"
+
+items:
+  # =========================== (1) cliché-traps ===========================
+  - item_id: hard-mirror-01
+    object: The Mirror
+    object_type: ordinary_physical_object
+    family: cliche-trap
+    description: >-
+      a small round shaving mirror on a tarnished brass stand, the silvering flaked away
+      along one curved edge
+    story_a: >-
+      An art forger holds his finished copy up to the mirror, because a genuine old master
+      reads true reversed while his own too-careful brushwork turns stiff and wrong in the
+      glass.
+    story_b: >-
+      In the rehabilitation room down the corridor a stroke patient is learning, with the
+      same mirror angled by her therapist, to accept that the slack left hand reflected in
+      it belongs to her.
+    prompt_variants:
+      - base
+
+  - item_id: hard-anchor-01
+    object: The Anchor
+    object_type: ordinary_physical_object
+    family: cliche-trap
+    description: >-
+      a small rusted boat anchor with one fluke snapped clean off, a frayed length of rope
+      still spliced to its ring
+    story_a: >-
+      A salvage diver chooses the broken one-fluke anchor precisely because it will not
+      hold — it drags, letting her boat creep across the seabed slowly enough to read the
+      bottom for wreckage.
+    story_b: >-
+      A retired smuggler keeps the same anchor nailed above his door, its fluke lost the
+      night he cut his line and ran, the nearest thing to a confession he has ever made.
+    prompt_variants:
+      - base
+
+  - item_id: hard-thread-01
+    object: A Knotted Red Thread
+    object_type: invented_symbolic_object
+    family: cliche-trap
+    description: >-
+      a length of dyed-red wool knotted at irregular intervals, wound on a small spool of
+      yellowed bone
+    story_a: >-
+      A drowned surveyor's widow walks the tideline paying out his knotted thread, each
+      knot one fathom of the coast he died measuring, to finish the chart in his hand.
+    story_b: >-
+      Three cells down the same kind of knotted thread is passed wall to wall, where the
+      gaps between knots are a tap-code alphabet the block has smuggled past the guards for
+      years.
+    prompt_variants:
+      - base
+
+  - item_id: hard-hourglass-01
+    object: The Hourglass
+    object_type: ordinary_physical_object
+    family: cliche-trap
+    description: >-
+      a small hourglass in a brass frame, the lower bulb half full of fine grey sand, one
+      wooden end-cap split and reglued
+    story_a: >-
+      A glassblower's apprentice flips the hourglass to time the exact reheat of a piece —
+      a grain too long in the furnace and the rim slumps, so the sand is the difference
+      between a bowl and a ruin.
+    story_b: >-
+      Across town a customs officer turns the same hourglass on his desk and lets it run in
+      silence before he resumes questioning, the falling sand a pressure he never has to
+      name aloud.
+    prompt_variants:
+      - base
+
+  - item_id: hard-candle-01
+    object: The Candle
+    object_type: ordinary_physical_object
+    family: cliche-trap
+    description: >-
+      a stub of tallow candle in a tin dish, the wick long and the flame leaning, a curl of
+      black smoke coming off it
+    story_a: >-
+      A grid technician keeps the candle burning beside the sealed relay room's panel:
+      when the flame starts to gutter and lean he knows the oxygen is dropping and it is
+      time to get out.
+    story_b: >-
+      In a back room a forger of old letters passes each fresh page over the same flame,
+      smoking the paper to the brown of age the buyers expect.
+    prompt_variants:
+      - base
+
+  # =========================== (2) invented / adversarial ===========================
+  - item_id: hard-coin-01
+    object: A Two-Faced Coin
+    object_type: invented_symbolic_object
+    family: invented
+    description: >-
+      a worn coin struck with the same profile on both faces and no reverse, its milled
+      edge nearly smooth
+    story_a: >-
+      A ferryman who must "flip for" which of two stranded travellers to carry across first
+      keeps this coin so the outcome is never truly chance: he decides, and lets the coin
+      take the blame.
+    story_b: >-
+      A counterfeit-detector's apprentice is handed it as her first test piece — an object
+      that cannot be a coin at all, because no mint has ever struck two obverses.
+    prompt_variants:
+      - base
+
+  - item_id: hard-ladder-01
+    object: The Walled Ladder
+    object_type: invented_symbolic_object
+    family: invented
+    description: >-
+      a wooden ladder bolted permanently flat to a brick wall, its top rungs ending at a
+      doorway that has since been bricked solid
+    story_a: >-
+      A muralist climbs the fixed ladder every day to reach the high corner of the wall she
+      is painting and has long stopped seeing the bricked-up door it was built to serve.
+    story_b: >-
+      A buildings inspector photographs the same ladder as evidence in a fire-code hearing,
+      because on the plans it still leads to an escape that no longer exists.
+    prompt_variants:
+      - base
+
+  - item_id: hard-lens-01
+    object: A Cracked Lens
+    object_type: invented_symbolic_object
+    family: invented
+    description: >-
+      a single spectacle lens finely cracked across the middle, kept folded in a twist of
+      waxed paper
+    story_a: >-
+      An old astronomer keeps the cracked lens because the flaw splits one star into a
+      precise double, and he has timed that doubling for forty years as his private clock.
+    story_b: >-
+      A pickpocket's apprentice is taught to palm the same lens and offer a mark a "free
+      look" through it: the crack makes the eye flinch and blink, and the half-second of
+      that blink is all a hand needs.
+    prompt_variants:
+      - base
+
+  - item_id: hard-bell-01
+    object: A Silenced Bell
+    object_type: invented_symbolic_object
+    family: invented
+    description: >-
+      a cast-bronze hand bell with its clapper removed, the gap where it hung packed solid
+      with hardened wax
+    story_a: >-
+      A foundry-master who lost his hearing silenced this one bell himself the year the
+      ringing left his ears, and keeps it on the shelf among the others he can no longer
+      hear.
+    story_b: >-
+      A night-ward nurse sets the same wax-packed bell on the floor by a fall-risk patient's
+      bed, where a knock makes no sound at all — only a tremor she can feel come up through
+      the boards.
+    prompt_variants:
+      - base
+
+  - item_id: hard-doorframe-01
+    object: A Freestanding Door
+    object_type: invented_symbolic_object
+    family: invented
+    description: >-
+      a panelled wooden door hung in its own frame and standing alone, no wall around it,
+      a brass handle on each side
+    story_a: >-
+      On a bare stage the actors "enter" through the freestanding door and the audience
+      agrees not to see that there is nothing behind it — the whole scene depends on the
+      shared pretence.
+    story_b: >-
+      Surveyors clearing a demolished terrace find the same door left upright in the rubble
+      of one footprint, the single thing the family asked be spared, marking where a front
+      hall used to be.
+    prompt_variants:
+      - base
+
+  - item_id: hard-map-01
+    object: A Map of a City That Does Not Exist
+    object_type: invented_symbolic_object
+    family: invented
+    description: >-
+      a soft-folded map of an unnamed city, its streets annotated in two different hands —
+      one in fresh blue ink, one in faded pencil
+    story_a: >-
+      A novelist keeps the invented-city map open as she writes, the blue ink her own
+      running notes, the streets and squares a scaffold she must not contradict from
+      chapter to chapter.
+    story_b: >-
+      Her estranged father, the pencil hand, annotates the same map in the care home
+      convinced it is the town he grew up in, naming a bakery and a school onto streets
+      that were never anywhere.
+    prompt_variants:
+      - base
+
+  - item_id: hard-holestone-01
+    object: A Stone With a Hole Through It
+    object_type: invented_symbolic_object
+    family: invented
+    description: >-
+      a flat grey beach stone, palm-sized, worn clean through by water in one near-perfect
+      round hole
+    story_a: >-
+      The weir-keeper wedges the holed stone at a fixed height in the sluice channel: when
+      the river rises to the lower lip of the hole, the water is about to top the gate and
+      he must open it.
+    story_b: >-
+      A fisherman's daughter looks through the same hole out to sea, where it frames one
+      fixed patch of horizon — the bearing where his boat went down — and nothing else.
+    prompt_variants:
+      - base

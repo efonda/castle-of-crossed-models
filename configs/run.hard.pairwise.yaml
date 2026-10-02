@@ -1,0 +1,23 @@
+# Run config hard.pairwise; writes to data/runs/hard.
+data_dir: data/runs/hard
+item_bank: data/items_hard.yaml
+samples: 3
+temperature: 0.0
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai}
+  - {name: claude-opus-4-8, provider: anthropic}
+  - {name: claude-sonnet-4-6, provider: anthropic}
+  - {name: gemini-3.1-pro-preview, provider: google}   # third-vendor flagship (plan #2)
+  - {name: gemini-3.5-flash, provider: google}
+  - {name: gpt-5.4-mini, provider: openai}
+  - {name: claude-haiku-4-5-20251001, provider: anthropic}
+  - {name: gemini-3.1-flash-lite, provider: google}
+
+judges:  # 4 judges across 3 vendors — Gemini-Pro is the THIRD family (plan #1, shared-blind-spot test)
+  - {judge_model: claude-opus-4-8-api, model: claude-opus-4-8, provider: anthropic}
+  - {judge_model: claude-sonnet-4-6, provider: anthropic}
+  - {judge_model: gpt-5.5, provider: openai}
+  - {judge_model: gemini-3.1-pro-preview, provider: google}   # also generates → enables Gemini self-pref check

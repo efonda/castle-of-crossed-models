@@ -1,0 +1,15 @@
+# Run config signal.fable; writes to data/runs/signal.
+data_dir: data/runs/signal
+item_bank: data/items.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - name: claude-fable-5
+    provider: anthropic
+    conditions: [normal]
+
+judges: []

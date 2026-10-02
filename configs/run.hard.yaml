@@ -1,0 +1,45 @@
+# Run config hard; writes to data/runs/hard.
+data_dir: data/runs/hard
+item_bank: data/items_hard.yaml
+
+samples: 3
+temperature: 0.7
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - name: gpt-5.5
+    provider: openai
+    conditions: [normal]
+  - name: claude-opus-4-8
+    provider: anthropic
+    conditions: [normal]
+  - name: claude-sonnet-4-6
+    provider: anthropic
+    conditions: [normal]
+  - name: gemini-3.1-pro-preview      # third-vendor flagship (Google) — makes the saturated
+    provider: google                  # top a THREE-vendor result, not two (plan #2)
+    conditions: [normal]
+  - name: gemini-3.5-flash            # mid
+    provider: google
+    conditions: [normal]
+  - name: gpt-5.4-mini                # mid-ish OpenAI (tier empirical); also the OpenAI
+    provider: openai                  # NON-flagship point + gpt-5.5-judge sibling self-pref probe (§9)
+    conditions: [normal]
+  - name: claude-haiku-4-5-20251001   # lite
+    provider: anthropic
+    conditions: [normal]
+  - name: gemini-3.1-flash-lite       # lite
+    provider: google
+    conditions: [normal]
+  - name: gemma4:26b               # larger
+    provider: ollama
+    conditions: [normal]
+  - name: llama3.2:3b              # small
+    provider: ollama
+    conditions: [normal]
+  - name: gemma4:e4b               # mid
+    provider: ollama
+    conditions: [normal]
+
+judges: []

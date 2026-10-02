@@ -1,0 +1,14 @@
+# Run config precheck.flash; writes to data/runs/signal_grok.
+data_dir: data/runs/signal_grok
+item_bank: data/items.yaml
+samples: 3
+temperature: 0.0
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai}            # cluster
+  - {name: gemini-3.5-flash, provider: google}   # the 0.85 machine-resolved anchor
+
+judges:
+  - {judge_model: grok-4.3, provider: xai}

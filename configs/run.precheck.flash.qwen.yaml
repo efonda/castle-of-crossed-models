@@ -1,0 +1,14 @@
+# Run config precheck.flash.qwen; writes to data/runs/signal_grok.
+data_dir: data/runs/signal_grok
+item_bank: data/items.yaml
+samples: 3
+temperature: 0.0
+blind_seed: 0
+bootstrap: 2000
+
+models:
+  - {name: gpt-5.5, provider: openai}
+  - {name: gemini-3.5-flash, provider: google}
+
+judges:
+  - {judge_model: qwen3.7-max, provider: openrouter, model: qwen/qwen3.7-max}

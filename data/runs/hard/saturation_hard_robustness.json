@@ -1,0 +1,62 @@
+{
+  "stratum": "hard",
+  "weighting": "per-object (structural; per-generation NOT implemented by design \u2014 guard 1)",
+  "surviving_composition": {
+    "hard_objects_contributing": 12,
+    "within_cluster_comparisons": 108,
+    "consensus_judges": [
+      "claude-opus-4-8-api",
+      "claude-sonnet-4-6",
+      "gemini-3.1-pro-preview",
+      "gpt-5.5"
+    ],
+    "note": "underpowered until option 2 (hard samples 1-2) is run; n grows ~3x after"
+  },
+  "hard_within_cluster": {
+    "inter_judge_agreement_per_object_mean": 0.627,
+    "per_pair_winrate": {
+      "gpt-5.5_wins_vs_claude-opus-4-8": {
+        "per_object_mean_winrate": 0.585,
+        "abs_dev_from_0.5": 0.085,
+        "n_objects": 12
+      },
+      "gpt-5.5_wins_vs_claude-sonnet-4-6": {
+        "per_object_mean_winrate": 0.536,
+        "abs_dev_from_0.5": 0.036,
+        "n_objects": 12
+      },
+      "claude-opus-4-8_wins_vs_claude-sonnet-4-6": {
+        "per_object_mean_winrate": 0.437,
+        "abs_dev_from_0.5": 0.063,
+        "n_objects": 12
+      }
+    }
+  },
+  "signal_within_cluster_reference": {
+    "inter_judge_agreement_per_object_mean": 0.61,
+    "per_pair_winrate": {
+      "gpt-5.5_wins_vs_claude-opus-4-8": {
+        "per_object_mean_winrate": 0.604,
+        "abs_dev_from_0.5": 0.104,
+        "n_objects": 6
+      },
+      "gpt-5.5_wins_vs_claude-sonnet-4-6": {
+        "per_object_mean_winrate": 0.597,
+        "abs_dev_from_0.5": 0.097,
+        "n_objects": 6
+      },
+      "claude-opus-4-8_wins_vs_claude-sonnet-4-6": {
+        "per_object_mean_winrate": 0.444,
+        "abs_dev_from_0.5": 0.056,
+        "n_objects": 6
+      }
+    }
+  },
+  "calibration_ladder_instrument_works": {
+    "flagship_vs_lite_winrate_per_object_mean": 0.962,
+    "n_objects": 12
+  },
+  "separation_threshold_pre_committed": 0.75,
+  "pre_committed_interpretation": "EXPECTED: confirms at-floor \u2014 saturation HOLDS on the hard stratum. Within-cluster inter-judge agreement at ~the 0.62 coin-flip floor means NO within-cluster resolution is recovered on hard. A faint lean in the gpt direction is the ALREADY-KNOWN weak gpt edge, NOT a new axis (gate-survival was refuted as a substring/paraphrase artifact; sample-0 judged separation was at-floor). It counts as separation ONLY if per-object inter-judge agreement exceeds 0.75 AND the per-pair win-rate clears 0.5 decisively \u2014 a faint underpowered lean does NOT qualify.",
+  "verdict": "CONFIRMS AT-FLOOR \u2014 saturation holds on the hard stratum (no within-cluster resolution; instrument confirmed live by the lite rung). Robustness win."
+}
